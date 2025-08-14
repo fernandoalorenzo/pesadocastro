@@ -117,6 +117,11 @@ body {
 	transition: color 0.8s ease, background 0.8s ease;
 }
 
+.social-link.website:hover {
+	color: #ffffff;
+	background: var(--gradient-secondary);
+}
+
 .social-link.email:hover {
 	color: #ffffff;
 	background: var(--primary-color);
@@ -307,8 +312,8 @@ h1 {
 	color: #ffffff;
 	border: none;
 
-	/* Sombra sutil para profundidad */
-	text-shadow: 0px 0px 30px rgba(5, 34, 115, 0.5);
+	/* Sombra */
+	text-shadow: 0px 0px 30px rgba(1, 26, 95, 0.843);
 
 	/* Animación de entrada */
 	opacity: 0;

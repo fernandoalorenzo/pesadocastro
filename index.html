@@ -3,8 +3,9 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- HTML Meta Tags -->
 		<title>Grupo Pesado Castro - Concesionarios Oficiales Multimarca</title>
+		<link rel="shortcut icon" href="img/favicon.ico" />
+		<!-- HTML Meta Tags -->
 		<meta
 			name="description"
 			content="Concesionarios oficiales en Rosario y Pergamino. Hyundai, Citroën, Dodge, Haval y más." />
@@ -161,7 +162,7 @@
 					addresses: ["Corrientes 364 - ROSARIO"],
 					phones: ["0341 4268877"],
 					email: "consultas@pesadocastro.com",
-					website: "https://www.hyundai.pesadocastro.com",
+					website: "https://hyundai.pesadocastro.com",
 					facebook: "https://www.facebook.com/HyundaiRosario/",
 					instagram: "https://www.instagram.com/hyundaipesadocastro/",
 					whatsapp:
@@ -170,9 +171,12 @@
 				{
 					brand: "Citroën",
 					logo: "img/img_logos_citroen.png",
+					// addresses: [
+					// 	"Córdoba 5232 - ROSARIO",
+					// 	"Av. Carballo 992 - ROSARIO",
+					// ],
 					addresses: [
-						"Córdoba 5232 - ROSARIO",
-						"Av. Carballo 992 - ROSARIO",
+						"Córdoba 5232 / Av. Carballo 992 - ROSARIO",
 					],
 					phones: ["(0341) 552 7759"],
 					email: "citroen@pesadocastro.com",
@@ -330,6 +334,11 @@
 		mostrarRedes
 			? `
     <div class="social-links mt-3">
+		${
+			b.website
+				? `<a href="${b.website}" target="_blank" class="social-link website"><i class="fas fa-globe"></i></a>`
+				: ""
+		}
     ${
 		b.email
 			? `<a href="mailto:${b.email}" class="social-link email"><i class="fas fa-envelope"></i></a>`
