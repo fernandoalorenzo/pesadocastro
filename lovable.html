@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>
+			Grupo Pesado Castro Dealer - Concesionario Oficial Multimarca
+		</title>
+		<meta
+			name="description"
+			content="Concesionario oficial multimarca en Rosario y Pergamino. Hyundai, Citroën, Dodge, Lifan, Geely, Haval, Maserati y más. La mejor atención y servicio." />
+		<meta
+			name="keywords"
+			content="concesionario, autos, rosario, pergamino, hyundai, citroen, dodge, lifan, geely, haval, maserati, jac motors" />
+
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet" />
+		<!-- Font Awesome for icons -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet" />
+
+		<style>
+			:root {
+				--primary-color: #2c3e50;
+				--secondary-color: #34495e;
+				--accent-color: #3498db;
+				--text-dark: #2c3e50;
+				--text-light: #7f8c8d;
+				--bg-light: #f8f9fa;
+				--bg-white: #ffffff;
+				--shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+					0 2px 4px -1px rgba(0, 0, 0, 0.06);
+				--shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+					0 8px 10px -6px rgba(0, 0, 0, 0.1);
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: "Inter", sans-serif;
+				background-color: var(--bg-light);
+				color: var(--text-dark);
+				line-height: 1.6;
+			}
+
+			/* Header Styles */
+			.header {
+				background: linear-gradient(
+					135deg,
+					var(--primary-color) 0%,
+					var(--secondary-color) 100%
+				);
+				color: white;
+				padding: 2rem 0;
+				box-shadow: var(--shadow);
+			}
+
+			.logo-section {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+			}
+
+			.logo-section img {
+				height: 64px;
+				width: auto;
+			}
+
+			.company-info h1 {
+				font-size: 2rem;
+				font-weight: 700;
+				margin-bottom: 0.5rem;
+			}
+
+			.company-info p {
+				opacity: 0.9;
+				font-size: 1rem;
+			}
+
+			.contact-info {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				font-size: 0.9rem;
+			}
+
+			.contact-info a {
+				color: white;
+				text-decoration: none;
+				transition: color 0.3s ease;
+			}
+
+			.contact-info a:hover {
+				color: var(--accent-color);
+			}
+
+			/* Hero Section */
+			.hero {
+				padding: 4rem 0;
+				background: linear-gradient(
+					135deg,
+					var(--bg-light) 0%,
+					#ecf0f1 100%
+				);
+				text-align: center;
+			}
+
+			.hero h2 {
+				font-size: 3rem;
+				font-weight: 700;
+				color: var(--text-dark);
+				margin-bottom: 1.5rem;
+				opacity: 0;
+				transform: translateY(30px);
+				animation: fadeInUp 0.8s ease-out 0.2s forwards;
+			}
+
+			.hero p {
+				font-size: 1.25rem;
+				color: var(--text-light);
+				max-width: 800px;
+				margin: 0 auto;
+				opacity: 0;
+				transform: translateY(30px);
+				animation: fadeInUp 0.8s ease-out 0.4s forwards;
+			}
+
+			/* Brand Cards */
+			.brands-section {
+				padding: 4rem 0;
+			}
+
+			.brand-card {
+				background: var(--bg-white);
+				border-radius: 12px;
+				box-shadow: var(--shadow);
+				padding: 2rem;
+				height: 100%;
+				transition: all 0.3s ease;
+				border: 1px solid #e9ecef;
+				opacity: 0;
+				transform: translateY(30px);
+				animation: fadeInUp 0.6s ease-out forwards;
+			}
+
+			.brand-card:hover {
+				transform: translateY(-5px);
+				box-shadow: var(--shadow-hover);
+			}
+
+			.brand-logo {
+				height: 80px;
+				background: #f8f9fa;
+				border-radius: 8px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 1.5rem;
+				padding: 1rem;
+				transition: background-color 0.3s ease;
+			}
+
+			.brand-card:hover .brand-logo {
+				background: #e9ecef;
+			}
+
+			.brand-logo img {
+				max-width: 100%;
+				max-height: 100%;
+				object-fit: contain;
+				transition: transform 0.3s ease;
+			}
+
+			.brand-card:hover .brand-logo img {
+				transform: scale(1.05);
+			}
+
+			.brand-info h3 {
+				font-size: 1.5rem;
+				font-weight: 600;
+				margin-bottom: 1rem;
+				color: var(--text-dark);
+				text-align: center;
+			}
+
+			.brand-details {
+				font-size: 0.9rem;
+				color: var(--text-light);
+				margin-bottom: 1rem;
+				text-align: center;
+			}
+
+			.brand-details .phone {
+				color: var(--primary-color);
+				font-weight: 500;
+			}
+
+			.website-link {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+				color: var(--accent-color);
+				text-decoration: none;
+				font-size: 0.9rem;
+				font-weight: 500;
+				margin-bottom: 1.5rem;
+				transition: color 0.3s ease;
+			}
+
+			.website-link:hover {
+				color: var(--primary-color);
+			}
+
+			.social-links {
+				display: flex;
+				justify-content: center;
+				gap: 0.75rem;
+				padding-top: 1rem;
+				border-top: 1px solid #e9ecef;
+			}
+
+			.social-link {
+				width: 40px;
+				height: 40px;
+				border-radius: 8px;
+				background: #f8f9fa;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: var(--text-light);
+				text-decoration: none;
+				transition: all 0.3s ease;
+			}
+
+			.social-link:hover {
+				color: white;
+				transform: translateY(-2px);
+			}
+
+			.social-link.email:hover {
+				background: var(--primary-color);
+			}
+			.social-link.facebook:hover {
+				background: #1877f2;
+			}
+			.social-link.instagram:hover {
+				background: linear-gradient(45deg, #833ab4, #fd1d1d, #f77737);
+			}
+			.social-link.whatsapp:hover {
+				background: #25d366;
+			}
+
+			/* Carousel Styles */
+			.carousel-section {
+				padding: 4rem 0;
+				background: linear-gradient(
+					90deg,
+					var(--bg-white) 0%,
+					var(--bg-light) 50%,
+					var(--bg-white) 100%
+				);
+				overflow: hidden;
+			}
+
+			.carousel-section h2 {
+				text-align: center;
+				font-size: 2.5rem;
+				font-weight: 700;
+				color: var(--text-dark);
+				margin-bottom: 1rem;
+			}
+
+			.carousel-section p {
+				text-align: center;
+				font-size: 1.1rem;
+				color: var(--text-light);
+				max-width: 600px;
+				margin: 0 auto 3rem;
+			}
+
+			.carousel-container {
+				position: relative;
+				width: 100%;
+				overflow: hidden;
+			}
+
+			.carousel-track {
+				display: flex;
+				animation: scroll 30s linear infinite;
+				width: calc(200px * 18);
+			}
+
+			.carousel-track:hover {
+				animation-play-state: paused;
+			}
+
+			.carousel-item {
+				flex: 0 0 200px;
+				height: 100px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 2rem;
+			}
+
+			.carousel-item img {
+				max-width: 120px;
+				max-height: 60px;
+				object-fit: contain;
+				filter: grayscale(100%) opacity(0.7);
+				transition: all 0.3s ease;
+			}
+
+			.carousel-item:hover img {
+				filter: grayscale(0%) opacity(1);
+				transform: scale(1.1);
+			}
+
+			.carousel-container::before,
+			.carousel-container::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				width: 100px;
+				z-index: 2;
+				pointer-events: none;
+			}
+
+			.carousel-container::before {
+				left: 0;
+				background: linear-gradient(
+					to right,
+					var(--bg-light),
+					transparent
+				);
+			}
+
+			.carousel-container::after {
+				right: 0;
+				background: linear-gradient(
+					to left,
+					var(--bg-light),
+					transparent
+				);
+			}
+
+			@keyframes scroll {
+				0% {
+					transform: translateX(0);
+				}
+				100% {
+					transform: translateX(-50%);
+				}
+			}
+
+			.services-section {
+				padding: 4rem 0;
+				background: #f8f9fa;
+			}
+
+			.service-card {
+				background: var(--bg-white);
+				border-radius: 12px;
+				box-shadow: var(--shadow);
+				padding: 2rem;
+				text-align: center;
+				height: 100%;
+				transition: all 0.3s ease;
+				border: 1px solid #e9ecef;
+			}
+
+			.service-card:hover {
+				transform: translateY(-5px);
+				box-shadow: var(--shadow-hover);
+			}
+
+			.contact-section {
+				padding: 4rem 0;
+			}
+
+			.contact-card {
+				background: var(--bg-white);
+				border-radius: 12px;
+				box-shadow: var(--shadow);
+				padding: 2rem;
+				text-align: center;
+				height: 100%;
+				transition: all 0.3s ease;
+				border: 1px solid #e9ecef;
+			}
+
+			.contact-card:hover {
+				transform: translateY(-5px);
+				box-shadow: var(--shadow-hover);
+			}
+
+			.contact-icon {
+				font-size: 2.5rem;
+				color: var(--accent-color);
+				margin-bottom: 1rem;
+			}
+
+			.footer {
+				background: var(--primary-color);
+				color: white;
+				padding: 2rem 0;
+				text-align: center;
+			}
+
+			.brand-card:nth-child(1) {
+				animation-delay: 0.1s;
+			}
+			.brand-card:nth-child(2) {
+				animation-delay: 0.2s;
+			}
+			.brand-card:nth-child(3) {
+				animation-delay: 0.3s;
+			}
+			.brand-card:nth-child(4) {
+				animation-delay: 0.4s;
+			}
+			.brand-card:nth-child(5) {
+				animation-delay: 0.5s;
+			}
+			.brand-card:nth-child(6) {
+				animation-delay: 0.6s;
+			}
+			.brand-card:nth-child(7) {
+				animation-delay: 0.7s;
+			}
+			.brand-card:nth-child(8) {
+				animation-delay: 0.8s;
+			}
+			.brand-card:nth-child(9) {
+				animation-delay: 0.9s;
+			}
+
+			@keyframes fadeInUp {
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			@media (max-width: 768px) {
+				.hero h2 {
+					font-size: 2rem;
+				}
+				.hero p {
+					font-size: 1rem;
+				}
+				.company-info h1 {
+					font-size: 1.5rem;
+				}
+				.logo-section {
+					flex-direction: column;
+					text-align: center;
+				}
+				.contact-info {
+					justify-content: center;
+					margin-top: 1rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Header -->
+		<header class="header">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-8">
+						<div class="logo-section">
+							<img
+								src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0'/%3E%3Cpath d='M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0'/%3E%3Cpath d='M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2'/%3E%3C/svg%3E"
+								alt="Logo Grupo Pesado Castro" />
+							<div class="company-info">
+								<h1>Grupo Pesado Castro Dealer</h1>
+								<p>Concesionario Oficial Multimarca</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="contact-info">
+							<i class="fas fa-envelope"></i>
+							<a href="mailto:grupo@pesadocastro.com"
+								>grupo@pesadocastro.com</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- Hero Section -->
+		<section class="hero">
+			<div class="container">
+				<h2>Nuestras Marcas</h2>
+				<p>
+					Representamos las marcas más importantes del mercado
+					automotriz con la mejor atención y servicio en Rosario y
+					Pergamino
+				</p>
+			</div>
+		</section>
+
+		<!-- Brands Section -->
+		<section class="brands-section">
+			<div class="container">
+				<div class="row g-4">
+					<!-- Hyundai -->
+					<div class="col-lg-4 col-md-6">
+						<div class="brand-card">
+							<div class="brand-logo">
+								<img
+									src="https://logos-world.net/wp-content/uploads/2021/03/Hyundai-Logo.png"
+									alt="Hyundai" />
+							</div>
+							<div class="brand-info">
+								<h3>Hyundai</h3>
+								<div class="brand-details">
+									<p>Corrientes 364 - ROSARIO</p>
+									<p class="phone">0341 4268877</p>
+								</div>
+								<a
+									href="http://hyundai.pesadocastro.com"
+									target="_blank"
+									class="website-link">
+									<i class="fas fa-external-link-alt"></i>
+									Visitar sitio web
+								</a>
+								<div class="social-links">
+									<a
+										href="mailto:consultas@pesadocastro.com"
+										class="social-link email">
+										<i class="fas fa-envelope"></i>
+									</a>
+									<a
+										href="https://www.facebook.com/HyundaiRosario/"
+										target="_blank"
+										class="social-link facebook">
+										<i class="fab fa-facebook-f"></i>
+									</a>
+									<a
+										href="https://www.instagram.com/hyundaipesado/"
+										target="_blank"
+										class="social-link instagram">
+										<i class="fab fa-instagram"></i>
+									</a>
+									<a
+										href="http://api.whatsapp.com/send?phone=5493415527833"
+										target="_blank"
+										class="social-link whatsapp">
+										<i class="fab fa-whatsapp"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Citroën -->
+					<div class="col-lg-4 col-md-6">
+						<div class="brand-card">
+							<div class="brand-logo">
+								<img
+									src="https://logos-world.net/wp-content/uploads/2021/03/Citroen-Logo.png"
+									alt="Citroën" />
+							</div>
+							<div class="brand-info">
+								<h3>Citroën</h3>
+								<div class="brand-details">
+									<p>Eva Perón 7651 - ROSARIO</p>
+									<p class="phone">0341 4567890</p>
+								</div>
+								<a
+									href="http://citroen.pesadocastro.com"
+									target="_blank"
+									class="website-link">
+									<i class="fas fa-external-link-alt"></i>
+									Visitar sitio web
+								</a>
+								<div class="social-links">
+									<a
+										href="mailto:citroen@pesadocastro.com"
+										class="social-link email">
+										<i class="fas fa-envelope"></i>
+									</a>
+									<a
+										href="https://www.facebook.com/CitroenRosario/"
+										target="_blank"
+										class="social-link facebook">
+										<i class="fab fa-facebook-f"></i>
+									</a>
+									<a
+										href="https://www.instagram.com/citroenpesado/"
+										target="_blank"
+										class="social-link instagram">
+										<i class="fab fa-instagram"></i>
+									</a>
+									<a
+										href="http://api.whatsapp.com/send?phone=5493416677889"
+										target="_blank"
+										class="social-link whatsapp">
+										<i class="fab fa-whatsapp"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Dodge -->
+					<div class="col-lg-4 col-md-6">
+						<div class="brand-card">
+							<div class="brand-logo">
+								<img
+									src="https://logos-world.net/wp-content/uploads/2020/09/Dodge-Logo.png"
+									alt="Dodge" />
+							</div>
+							<div class="brand-info">
+								<h3>Dodge</h3>
+								<div class="brand-details">
+									<p>San Martín 456 - PERGAMINO</p>
+									<p class="phone">02477 432100</p>
+								</div>
+								<a
+									href="http://dodge.pesadocastro.com"
+									target="_blank"
+									class="website-link">
+									<i class="fas fa-external-link-alt"></i>
+									Visitar sitio web
+								</a>
+								<div class="social-links">
+									<a
+										href="mailto:dodge@pesadocastro.com"
+										class="social-link email">
+										<i class="fas fa-envelope"></i>
+									</a>
+									<a
+										href="https://www.facebook.com/DodgePergamino/"
+										target="_blank"
+										class="social-link facebook">
+										<i class="fab fa-facebook-f"></i>
+									</a>
+									<a
+										href="https://www.instagram.com/dodgepesado/"
+										target="_blank"
+										class="social-link instagram">
+										<i class="fab fa-instagram"></i>
+									</a>
+									<a
+										href="http://api.whatsapp.com/send?phone=5492477445566"
+										target="_blank"
+										class="social-link whatsapp">
+										<i class="fab fa-whatsapp"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Brand Carousel -->
+		<section class="carousel-section">
+			<div class="container">
+				<h2>Marcas de Confianza</h2>
+				<p>
+					Trabajamos con las marcas más reconocidas del mercado
+					automotriz
+				</p>
+			</div>
+			<div class="carousel-container">
+				<div class="carousel-track">
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2021/03/Hyundai-Logo.png"
+							alt="Hyundai" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2021/03/Citroen-Logo.png"
+							alt="Citroën" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2020/09/Dodge-Logo.png"
+							alt="Dodge" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2016/09/Lifan-Logo.jpg"
+							alt="Lifan" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2021/02/Geely-Logo.png"
+							alt="Geely" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2021/02/Haval-Logo.png"
+							alt="Haval" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2021/08/Maserati-Logo.png"
+							alt="Maserati" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2016/11/JAC-Logo.png"
+							alt="JAC Motors" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2021/03/Hyundai-Logo.png"
+							alt="Hyundai" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2021/03/Citroen-Logo.png"
+							alt="Citroën" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2020/09/Dodge-Logo.png"
+							alt="Dodge" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2016/09/Lifan-Logo.jpg"
+							alt="Lifan" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2021/02/Geely-Logo.png"
+							alt="Geely" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2021/02/Haval-Logo.png"
+							alt="Haval" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2021/08/Maserati-Logo.png"
+							alt="Maserati" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2016/11/JAC-Logo.png"
+							alt="JAC Motors" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2021/03/Hyundai-Logo.png"
+							alt="Hyundai" />
+					</div>
+					<div class="carousel-item">
+						<img
+							src="https://logos-world.net/wp-content/uploads/2021/03/Citroen-Logo.png"
+							alt="Citroën" />
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Bootstrap JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
