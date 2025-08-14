@@ -72,14 +72,16 @@ body {
 }
 
 .contact-info {
-	color: white;
+	/* color: inherit; */
+	color: #ffffff;
 	text-align: right;
 	font-size: 0.95rem;
 }
 
 .contact-info a {
-	color: var(--accent-color);
-	text-decoration: none;
+	/* color: var(--accent-color);
+	text-decoration: none; */
+	color: #ffffff;
 	transition: color 0.3s ease;
 }
 
@@ -338,6 +340,7 @@ h5 {
 
 .boton-contacto:hover {
 	background-color: #0056b3;
+	color: white;
 }
 
 @keyframes scroll {
