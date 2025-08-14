@@ -114,6 +114,7 @@ body {
 .social-link:hover {
 	color: white;
 	transform: translateY(-2px);
+	transition: color 0.8s ease, background 0.8s ease;
 }
 
 .social-link.email:hover {
@@ -143,12 +144,12 @@ body {
 	border-radius: 12px;
 	text-align: center;
 	box-shadow: var(--shadow);
-	transition: all 0.3s ease;
+	transition: transform 0.5s ease, box-shadow 0.5s ease;
+	/* transition: all 0.3s ease; */
 	border: 1px solid #e9ecef;
 	opacity: 0;
 	transform: translateY(30px);
 	animation: fadeInUp 0.6s ease-out forwards;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -158,6 +159,16 @@ body {
 .brand-card:hover {
 	transform: translateY(-25px);
 	box-shadow: var(--shadow-hover);
+}
+
+.brand-card-inner {
+	transition: transform 0.5s ease;
+	/* transición suave */
+}
+
+.brand-card:hover .brand-card-inner {
+	transform: translateY(-10px);
+	/* sube al hacer hover */
 }
 
 .brand-card img {
@@ -278,32 +289,31 @@ h3,
 h4,
 h5 {
 	font-family: "Montserrat", sans-serif;
-	font-weight: 700;
+	font-weight: 800;
+	text-transform: uppercase;
 }
 
-.social-icons {
-	display: flex;
-	justify-content: center;
-	gap: 15px;
-	margin-top: 20px;
-}
+h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 3rem;
+	font-weight: 900;
+	text-transform: uppercase;
 
-.social-icon {
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	background-color: var(--primary-color);
-	color: white;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: all 0.3s ease;
-	text-decoration: none;
-}
+	/* Degradado de colores */
+	/* background: linear-gradient(135deg, #65a9d7, #00000071);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; */
 
-.social-icon:hover {
-	background-color: var(--secondary-color);
-	transform: scale(1.1);
+	color: #ffffff;
+	border: none;
+
+	/* Sombra sutil para profundidad */
+	text-shadow: 0px 0px 30px rgba(5, 34, 115, 0.5);
+
+	/* Animación de entrada */
+	opacity: 0;
+	transform: translateY(20px);
+	animation: fadeSlideIn 1s ease-out forwards;
 }
 
 /* Footer */
@@ -350,6 +360,14 @@ h5 {
 
 	100% {
 		transform: translateX(-50%);
+	}
+}
+
+/* Keyframes para la animación */
+@keyframes fadeSlideIn {
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
 
