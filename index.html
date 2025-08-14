@@ -254,7 +254,7 @@
 				const container = document.getElementById("brandsContainer");
 				container.innerHTML = "";
 				brandsData
-					.slice(0, 9)
+					.slice(0, 7) // Filtrar las marcas principales hasta el índice 7
 					.filter((b) =>
 						b.brand.toLowerCase().includes(filter.toLowerCase())
 					)
@@ -277,7 +277,7 @@
 				);
 				container.innerHTML = "";
 				brandsData
-					.slice(9)
+					.slice(7) // Filtrar las otras marcas a partir del índice 7
 					.filter((b) =>
 						b.brand.toLowerCase().includes(filter.toLowerCase())
 					)
